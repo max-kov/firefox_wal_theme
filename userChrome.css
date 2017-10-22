@@ -1,0 +1,40 @@
+@import url('file:///home/max/.cache/wal/colors.css');
+
+/* Use the variables */
+
+menubar, toolbar, nav-bar, #TabsToolbar > *{
+	background-color: var(--background) !important;
+    color: var(--foreground) !important;
+}
+
+#appmenu-button menupopup {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+}
+
+#back-button .toolbarbutton-icon {
+    background-color: var(--background) !important;
+}
+
+#forward-button, #reload-button, #stop-button, #back-forward-dropmarker {display:none;}
+
+tab[selected="true"] {
+	color: var(--color3)!important;
+}
+
+tab {
+    background-color: var(--background) !important;
+    color: var(--color1) !important;
+}
+
+#urlbar {
+	background-color: var(--background)!important;
+	color: var(--color1)!important;
+}
+
+findbar {-moz-appearance: none !important; background-color: var(--background) !important; }
+
+.autocomplete-richlistbox {
+    background: var(--background) !important;
+    color: var(--color1) !important;
+}
