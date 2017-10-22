@@ -38,3 +38,9 @@ findbar {-moz-appearance: none !important; background-color: var(--background) !
     background: var(--background) !important;
     color: var(--color1) !important;
 }
+
+#content browser {
+    margin-right: -14px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
