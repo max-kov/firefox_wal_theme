@@ -1,4 +1,4 @@
-@import url('file:///home/max/.cache/wal/colors.css');
+@import url('file:///home/<YOUR USERNAME HERE>/.cache/wal/colors.css');
 
 menubar, toolbar, nav-bar, #TabsToolbar > *{
 	background-color: var(--background) !important;
