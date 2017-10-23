@@ -44,3 +44,7 @@ findbar {-moz-appearance: none !important; background-color: var(--background) !
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+.tab-close-button.close-icon {
+    display:none;
+}
