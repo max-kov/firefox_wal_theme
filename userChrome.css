@@ -1,24 +1,30 @@
 @import url('file:///home/max/.cache/wal/colors.css');
 
-/* Use the variables */
-
 menubar, toolbar, nav-bar, #TabsToolbar > *{
 	background-color: var(--background) !important;
-    color: var(--foreground) !important;
 }
 
 #appmenu-button menupopup {
     background-color: var(--background) !important;
-    color: var(--foreground) !important;
+    color: var(--color2) !important;
 }
 
 #back-button .toolbarbutton-icon {
+    -moz-appearance: none !important;
     background-color: var(--background) !important;
+	color: var(--color1)!important;
+    border-color: var(--color1)!important;
 }
 
-#forward-button, #reload-button, #stop-button, #back-forward-dropmarker {display:none;}
+#forward-button,
+#reload-button,
+#stop-button,
+#back-forward-dropmarker {
+    display:none;
+}
 
 tab[selected="true"] {
+    background-color: var(--background) !important;
 	color: var(--color3)!important;
 }
 
@@ -28,15 +34,18 @@ tab {
 }
 
 #urlbar {
-	background-color: var(--background)!important;
-	color: var(--color1)!important;
+	background-color: var(--background) !important;
+	color: var(--color1) !important;
+    border-color: var(--color1)!important;
 }
 
-findbar {-moz-appearance: none !important; background-color: var(--background) !important; }
+findbar {
+    -moz-appearance: none !important;
+}
 
 .autocomplete-richlistbox {
-    background: var(--background) !important;
-    color: var(--color1) !important;
+    background-color: var(--background) !important;
+    color: var(--color7) !important;
 }
 
 #content browser {
@@ -45,6 +54,45 @@ findbar {-moz-appearance: none !important; background-color: var(--background) !
     overflow-x: hidden;
 }
 
-.tab-close-button.close-icon {
-    display:none;
+/* tab stuff */
+#TabsToolbar .arrowscrollbox-scrollbox {
+  padding: 0 !important;
+}
+
+#TabsToolbar .tabbrowser-tabs {
+  min-height: 26px !important;
+}
+
+#TabsToolbar .tabbrowser-tab[pinned] {
+  height: 26px;
+}
+
+#TabsToolbar .tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
+  padding-top: 4px !important;
+}
+
+#TabsToolbar .toolbarbutton-1 {
+  margin-bottom: -1px !important;
+}
+
+/* disable useless stuff */
+#tabbrowser-tabs ~ #alltabs-button,
+tabbrowser toolbarbutton[class^="scrollbutton"],
+#TabsToolbar toolbarbutton[class^="scrollbutton"],
+#TabsToolbar .tab-background-start,
+#TabsToolbar .tab-background-end,
+.tab-close-button.close-icon,
+#TabsToolbar .tabbrowser-tab:after,
+#TabsToolbar .tabbrowser-tab:before {
+  display: none !important;
+}
+
+#titlebar {
+    display: none !important;
+}
+
+#minimize-button,
+#restore-button,
+#close-button{
+    display: none !important;
 }
