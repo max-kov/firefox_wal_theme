@@ -26,6 +26,7 @@ menubar, toolbar, nav-bar, #TabsToolbar > *{
 tab[selected="true"] {
     background-color: var(--background) !important;
 	color: var(--color3)!important;
+    font-weight: bold !important;
 }
 
 tab {
