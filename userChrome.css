@@ -1,18 +1,103 @@
-@import url('file:///home/<YOUR USERNAME HERE>/.cache/wal/colors.css');
+@import url('file:///home/<USR>/.cache/wal/colors.css');
 
-menubar, toolbar, nav-bar, #TabsToolbar > *{
-	background-color: var(--background) !important;
+/*Darken panels to match theme*/
+#main-window[lwthemetextcolor="bright"] .panel-arrow { filter: invert(33%); }
+.panel-subview-body,#appMenu-zoomReset-button,.panel-mainview,.panel-subviews {
+  color: var(--color1) !important;
+  background: var(--background) !important;}
+.panel-subview-footer,[class^="PanelUI-"] {
+  color: var(--color1) !important;
+  background: var(--background) !important;}
+
+/*Darken urlbar popups to match theme*/
+#PopupAutoCompleteRichResult .ac-title-text{
+  color: var(--color1) !important;
+  filter: opacity(.7);}
+#PopupAutoCompleteRichResult .autocomplete-richlistbox {
+  background: var(--background) !important;}
+#main-window[lwthemetextcolor="bright"] [class^="search-"]{
+  color: var(--color1) !important;
+  background: var(--background) !important;}
+panel[type="autocomplete"],panel[type="autocomplete-richlistbox"],.autocomplete-history-popup {
+  border-width: 0px !important;}
+
+/*stops possible clashes with extension popups*/
+.webextension-popup-browser {
+  background: var(--background);}
+
+:root {
+  --tabs-border: transparent !important; /* Remove borders from active tab and below tabs */
 }
 
-#appmenu-button menupopup {
-    background-color: var(--background) !important;
-    color: var(--color2) !important;
+
+/* Tab bar customization */
+:root:-moz-lwtheme-brighttext {
+ --chrome-background-color: var(--background) !important;
+ --chrome-color: var(--color1) !important;
+ --chrome-secondary-background-color: var(--background) !important;
+ /*--toolbox-border-bottom-color: #232324 !important;*/
+  --toolbox-border-bottom-color: var(--backrgound) !important;
+}
+/*.tabbrowser-tab[visuallyselected="true"]:-moz-lwtheme {
+	color: #dddddd !important;
+}*/
+
+
+/* Fixing tabGroups menu */
+#tabGroups-tabview-button .toolbarbutton-text {
+	max-height: inherit !important;
+}
+toolbar {
+	min-height: 37px !important;
+}
+toolbar .toolbarbutton-1 {
+	padding: 3px 2px !important;
 }
 
-#back-button .toolbarbutton-icon {
-    -moz-appearance: none !important;
+
+/*
+ * Description: Makes the activity stream page look decent with the dark theme.
+ *
+ * Screenshot: https://imgur.com/a/WcxGk
+ *
+ * Contributor(s): Andrei Cristian Petcu
+ */
+
+.browserContainer {
+  background-color: var(--background, hsla(0,0%,100%,.8)) !important;
+}
+
+#sidebar {
     background-color: var(--background) !important;
-	color: var(--color1)!important;
+}
+
+.sidebar-placesTree {
+    background-color: var(--background) !important;
+}
+
+
+/* recolor sidebar to match rest of dark  theme */
+#sidebar-header {
+    background-color: var(--background) !important;
+    color: var(--color1) !important;
+    border:0px !important;
+}
+
+#sidebar, #sidebar-header {
+	border-right: 0px solid var(--background) !important;
+}
+
+
+scrollbar, scrollbar * {
+  -moz-appearance: none !important;
+  background: none !important;
+  margin-left: -19px !important;
+}
+
+
+#urlbar {
+    background-color: var(--background) !important;
+    color: var(--color1) !important;
     border-color: var(--color1)!important;
 }
 
@@ -25,75 +110,68 @@ menubar, toolbar, nav-bar, #TabsToolbar > *{
 
 tab[selected="true"] {
     background-color: var(--background) !important;
-	color: var(--color3)!important;
+    color: var(--color2) !important;
     font-weight: bold !important;
 }
 
-tab {
+/* Hide white bar. Not necessary, but helpful. */
+#sidebar-splitter {
+  opacity: 0 !important;
+}
+
+
+/* change up usercontext label */
+#userContext-icons{
+  background:var(--background)!important;
+  margin:auto 3px!important;
+  border-radius:2px!important;
+  padding:0 2px 0 5px!important;
+}
+#userContext-label{
+  color:var(--background) !important;
+}
+#userContext-indicator{
+  fill:var(--background)!important;
+  margin-right:2px!important;
+}
+#userContext-indicator[data-identity-icon="circle"]{
+  display:none!important;
+}
+
+
+/*
+ * Automatically hides the info/Firefox icon on the location bar when a website doesn't
+ * have any permissions.
+ *
+ * Contributor(s): Madis0
+ */
+
+/* Hide info icon for sites that don't have permissions */
+#urlbar :not(.grantedPermissions) #identity-icon {
+        transition: 300ms !important; /* Animate icon hiding */
+	opacity: 0 !important; /* Make icons transparent */
+	-moz-margin-end: -1.1em !important; /* Hide icons by offsetting them */
+}
+
+/* Show info icon on navbar hover, except for new tab page search icon */
+#urlbar[pageproxystate="valid"]:hover #identity-icon {
+        transition: 300ms !important; /* Animate icon showing */
+	opacity: 1 !important; /* Make icons opaque */
+	-moz-margin-end: initial !important; /* Use initial margins to show icons */
+}
+
+
+/* Minimize sidebar header to a light blue stripe (except Bookmarks, History, Sync'd Tabs); appears normally on hover */
+#sidebar-box:not([sidebarcommand="viewBookmarksSidebar"]):not([sidebarcommand="viewHistorySidebar"]):not([sidebarcommand="viewTabsSidebar"])
+  #sidebar-header:not(:hover) {
+    max-height: 5px !important;
+    min-height: 5px !important;
+    padding: 0 !important;
     background-color: var(--background) !important;
-    color: var(--color1) !important;
+    opacity: 1 !important;
 }
-
-#urlbar {
-	background-color: var(--background) !important;
-	color: var(--color1) !important;
-    border-color: var(--color1)!important;
-}
-
-findbar {
-    -moz-appearance: none !important;
-}
-
-.autocomplete-richlistbox {
-    background-color: var(--background) !important;
-    color: var(--color7) !important;
-}
-
-#content browser {
-    margin-right: -14px !important;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-/* tab stuff */
-#TabsToolbar .arrowscrollbox-scrollbox {
-  padding: 0 !important;
-}
-
-#TabsToolbar .tabbrowser-tabs {
-  min-height: 26px !important;
-}
-
-#TabsToolbar .tabbrowser-tab[pinned] {
-  height: 26px;
-}
-
-#TabsToolbar .tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
-  padding-top: 4px !important;
-}
-
-#TabsToolbar .toolbarbutton-1 {
-  margin-bottom: -1px !important;
-}
-
-/* disable useless stuff */
-#tabbrowser-tabs ~ #alltabs-button,
-tabbrowser toolbarbutton[class^="scrollbutton"],
-#TabsToolbar toolbarbutton[class^="scrollbutton"],
-#TabsToolbar .tab-background-start,
-#TabsToolbar .tab-background-end,
-.tab-close-button.close-icon,
-#TabsToolbar .tabbrowser-tab:after,
-#TabsToolbar .tabbrowser-tab:before {
-  display: none !important;
-}
-
-#titlebar {
-    display: none !important;
-}
-
-#minimize-button,
-#restore-button,
-#close-button{
-    display: none !important;
+#sidebar-box:not([sidebarcommand="viewBookmarksSidebar"]):not([sidebarcommand="viewHistorySidebar"]):not([sidebarcommand="viewTabsSidebar"])
+  #sidebar-header:not(:hover) #sidebar-switcher-target {
+    /* BAD NEWS: display: none !important; */
+    opacity: 0 !important;
 }
