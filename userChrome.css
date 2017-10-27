@@ -175,3 +175,18 @@ tab[selected="true"] {
     /* BAD NEWS: display: none !important; */
     opacity: 0 !important;
 }
+
+#minimize-button,
+#restore-button,
+#close-button{
+    display: none !important;
+}
+
+#tabbrowser-tabs ~ #alltabs-button,
+tabbrowser toolbarbutton[class^="scrollbutton"],
+#TabsToolbar toolbarbutton[class^="scrollbutton"],
+.tab-close-button.close-icon,
+#TabsToolbar .tabbrowser-tab:after,
+#TabsToolbar .tabbrowser-tab:before {
+  display: none !important;
+}
