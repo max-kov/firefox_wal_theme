@@ -114,6 +114,12 @@ tab[selected="true"] {
     font-weight: bold !important;
 }
 
+tab {
+    background-color: var(--background) !important;
+    color: var(--color1) !important;
+    font-weight: bold !important;
+}
+
 /* Hide white bar. Not necessary, but helpful. */
 #sidebar-splitter {
   opacity: 0 !important;
