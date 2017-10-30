@@ -196,3 +196,9 @@ tabbrowser toolbarbutton[class^="scrollbutton"],
 #TabsToolbar .tabbrowser-tab:before {
   display: none !important;
 }
+
+#content browser {
+ margin-right: -14px !important;
+ overflow-y: scroll;
+ overflow-x: hidden;
+}
